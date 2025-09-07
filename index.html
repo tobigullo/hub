@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hub de Redes</title>
+<style>
+  html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+    color:white;
+  }
+
+  /* Video de fondo */
+  #background-video {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    z-index:-1;
+    filter: brightness(0.7);
+  }
+
+  /* Contenedor de links */
+  .container {
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .social-links {
+    display:flex;
+    gap:40px;
+  }
+
+  .social-links a {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:90px;
+    height:90px;
+    background:#111;
+    border-radius:12px;
+    text-decoration:none;
+    transition: 0.3s ease;
+    filter:brightness(0.8);
+  }
+
+  .social-links a:hover {
+    background:#222;
+    transform:scale(1.1);
+    filter:brightness(1);
+    box-shadow:0 0 12px red;
+  }
+/* Separar SVG e imágenes externas */
+.social-links img {
+    width:40px;
+    height:40px;
+    filter: brightness(1) invert(1); /* solo para imágenes externas */
+}
+
+.social-links svg {
+    width:40px;
+    height:40px;
+    filter: none;   /* quitar invert para que no se vuelva negro */
+    fill: white;    /* aseguramos que sea blanco */
+}
+  @media (max-width:500px){
+    .social-links { gap:20px; }
+    .social-links a { width:60px; height:60px; }
+    .social-links img, .social-links svg { width:30px; height:30px; }
+  }
+</style>
+</head>
+<body>
+
+<video autoplay muted loop playsinline preload="auto" poster="videos/fondo.jpeg" id="background-video">
+    <source src="videos/Fondo pagina.mp4" type="video/mp4">
+    <source src="videos/Fondo-pagina.webm" type="video/webm">
+    Tu navegador no soporta video HTML5.
+</video>
+
+<div class="container">
+    <div class="social-links">
+        <a href="https://instagram.com/tobigullo" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5z"/>
+            </svg>
+        </a>
+        <a href="https://steamcommunity.com/id/tobigullo" target="_blank" aria-label="Steam">
+            <img src="steam-1.svg" alt="Steam" />
+        </a>
+        <a href="https://x.com/tobigullo" target="_blank" aria-label="x">
+            <img src="x-2.svg" alt="x" />
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
